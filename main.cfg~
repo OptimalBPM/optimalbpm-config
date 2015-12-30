@@ -1,0 +1,12 @@
+[broker]
+address=broker
+
+[agent]
+address=agent01
+broker_url=192.168.0.107:8080
+username=tester
+password=test
+repository_folder=~/optimalbpm/agent_repositories
+connection_retries=2
+[database]
+database_name = test_broker
