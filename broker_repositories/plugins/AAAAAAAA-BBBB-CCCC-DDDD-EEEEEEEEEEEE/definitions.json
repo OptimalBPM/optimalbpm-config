@@ -1,55 +1,56 @@
 {
-  "meta": {
-    "namespace": "qal",
-    "description": "Query Abstraction Layer"
-  },
-  "functions": {
-    "query": {
-      "meta": {
-        "title": "query <i>%parameters%</i>",
-        "description": "Query and join one or more data sources, return a structure that can return an SQL to run<div class='alert alert-info'>Supported datasets: RDBMS, XML, HTML, Excel and csv-files.</div>"
-      },
-      "parameters": [
-        {
-          "key": "statement",
-          "type": "complex",
-          "schemaId": "7e9ce2cd-ec44-4cd0-8b93-7f3901c979e1",
-          "title": "Query statement",
-          "description": "A structure that defines the query statement, see schemas/sql.json. Returns a QAL dataset.",
-          "output": false
-        }
-      ]
+  "qal": {
+    "meta": {
+      "description": "Query Abstraction Layer"
     },
-    "merge_datasets": {
-      "meta": {
-        "title": "merge <i>%parameters%</i>",
-        "description": "Merge a source QAL dataset into a destination QAL dataset.<div class='alert alert-info'>Used to transform and to merge datasets vertically (as opposed to joins)</div>"
+    "functions": {
+      "query": {
+        "meta": {
+          "title": "query <i>%parameters%</i>",
+          "description": "Query and join one or more data sources, return a structure that can return an SQL to run<div class='alert alert-info'>Supported datasets: RDBMS, XML, HTML, Excel and csv-files.</div>"
+        },
+        "parameters": [
+          {
+            "key": "statement",
+            "type": "complex",
+            "schemaId": "7e9ce2cd-ec44-4cd0-8b93-7f3901c979e1",
+            "title": "Query statement",
+            "description": "A structure that defines the query statement, see schemas/sql.json. Returns a QAL dataset.",
+            "output": false
+          }
+        ]
       },
-      "parameters": [
-        {
-          "key": "merge",
-          "type": "complex",
-          "schemaId": "7e9ce2cd-ec44-4cd0-8b93-7f3901c979e1",
-          "title": "Merge",
-          "description": "A structure that defines the m, see schemas/sql.json. Returns a QAL dataset.",
-          "output": false
-        }
-      ]
-    },
-    "open_dataset": {
-      "meta": {
-        "title": "open dataset <i>%parameters%</i>",
-        "description": "Returns an open dataset."
+      "merge_datasets": {
+        "meta": {
+          "title": "merge <i>%parameters%</i>",
+          "description": "Merge a source QAL dataset into a destination QAL dataset.<div class='alert alert-info'>Used to transform and to merge datasets vertically (as opposed to joins)</div>"
+        },
+        "parameters": [
+          {
+            "key": "merge",
+            "type": "complex",
+            "schemaId": "7e9ce2cd-ec44-4cd0-8b93-7f3901c979e1",
+            "title": "Merge",
+            "description": "A structure that defines the m, see schemas/sql.json. Returns a QAL dataset.",
+            "output": false
+          }
+        ]
       },
-      "parameters": [
-        {
-          "key": "resource",
-          "type": "complex",
-          "title": "Resource information",
-          "description": "Settings for the dataset",
-          "output": false
-        }
-      ]
+      "open_dataset": {
+        "meta": {
+          "title": "open dataset <i>%parameters%</i>",
+          "description": "Returns an open dataset."
+        },
+        "parameters": [
+          {
+            "key": "resource",
+            "type": "complex",
+            "title": "Resource information",
+            "description": "Settings for the dataset",
+            "output": false
+          }
+        ]
+      }
     }
   }
 }
