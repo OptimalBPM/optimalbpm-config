@@ -89,12 +89,7 @@
             "uniqueItems": true
         },
         "ArrayList": {
-            "items": {
-                "$ref": "*"
-            },
-            "minItems": 0,
-            "type": "array",
-            "uniqueItems": true
+            "type": "array"
         },
         "ArrayParameterAssignment": {
             "items": {
@@ -220,6 +215,75 @@
             "minItems": 0,
             "type": "array",
             "uniqueItems": true
+        },
+        "CustomDataset": {
+            "properties": {
+                "data_table": {
+                    "$ref": "#/definitions/TabularExpressionItem"
+                },
+                "field_names": {
+                    "$ref": "#/definitions/ArrayString"
+                },
+                "field_types": {
+                    "$ref": "#/definitions/datatypes"
+                }
+            },
+            "type": "object"
+        },
+        "FlatfileDataset": {
+            "properties": {
+                "csv_dialect": {
+                    "$ref": "#/definitions/csv_dialects"
+                },
+                "data_table": {
+                    "$ref": "#/definitions/TabularExpressionItem"
+                },
+                "delimiter": {
+                    "type": "string"
+                },
+                "escapechar": {
+                    "type": "string"
+                },
+                "field_names": {
+                    "$ref": "#/definitions/ArrayString"
+                },
+                "field_types": {
+                    "$ref": "#/definitions/datatypes"
+                },
+                "filename": {
+                    "type": "string"
+                },
+                "has_header": {
+                    "type": "boolean"
+                },
+                "lineterminator": {
+                    "type": "string"
+                },
+                "quotechar": {
+                    "type": "string"
+                },
+                "quoting": {
+                    "$ref": "#/definitions/quoting"
+                },
+                "skipinitialspace": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "MatrixDataset": {
+            "properties": {
+                "data_table": {
+                    "$ref": "#/definitions/TabularExpressionItem"
+                },
+                "field_names": {
+                    "$ref": "#/definitions/ArrayString"
+                },
+                "field_types": {
+                    "$ref": "#/definitions/datatypes"
+                }
+            },
+            "type": "object"
         },
         "ParameterAssignment": {
             "properties": {
@@ -574,6 +638,55 @@
             },
             "type": "object"
         },
+        "RDBMSDataset": {
+            "properties": {
+                "data_table": {
+                    "$ref": "#/definitions/TabularExpressionItem"
+                },
+                "field_names": {
+                    "$ref": "#/definitions/ArrayString"
+                },
+                "field_types": {
+                    "$ref": "#/definitions/datatypes"
+                },
+                "query": {
+                    "type": "string"
+                },
+                "table_name": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "SpreadsheetDataset": {
+            "properties": {
+                "data_table": {
+                    "$ref": "#/definitions/TabularExpressionItem"
+                },
+                "field_names": {
+                    "$ref": "#/definitions/ArrayString"
+                },
+                "field_types": {
+                    "$ref": "#/definitions/datatypes"
+                },
+                "filename": {
+                    "type": "string"
+                },
+                "has_header": {
+                    "type": "boolean"
+                },
+                "sheet_name": {
+                    "type": "string"
+                },
+                "x_offset": {
+                    "type": "integer"
+                },
+                "y_offset": {
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
         "TabularExpressionItem": {
             "anyOf": [
                 {
@@ -742,6 +855,32 @@
             },
             "type": "object"
         },
+        "XpathDataset": {
+            "properties": {
+                "data_table": {
+                    "$ref": "#/definitions/TabularExpressionItem"
+                },
+                "field_names": {
+                    "$ref": "#/definitions/ArrayString"
+                },
+                "field_types": {
+                    "$ref": "#/definitions/datatypes"
+                },
+                "field_xpaths": {
+                    "$ref": "#/definitions/ArrayString"
+                },
+                "filename": {
+                    "type": "string"
+                },
+                "rows_xpath": {
+                    "type": "string"
+                },
+                "xpath_data_format": {
+                    "$ref": "#/definitions/xpath_data_format"
+                }
+            },
+            "type": "object"
+        },
         "and_or": {
             "enum": [
                 "AND",
@@ -858,8 +997,8 @@
         },
         "csv_dialects": {
             "enum": [
-                "unix",
                 "excel-tab",
+                "unix",
                 "excel"
             ],
             "type": "string"
@@ -1026,7 +1165,10 @@
     "description": "The JSON Schema for QAL SQL settings",
     "properties": {
         "resources": {
-            "$ref": "qal://resources.json#/properties/resources"
+            "items": {
+                "$ref": "qal://resources.json#/definitions/Resource"
+            },
+            "type": "array"
         },
         "statement": {
             "$ref": "#/definitions/statement"

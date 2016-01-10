@@ -25,7 +25,7 @@
     "properties": {
         "resources": {
             "items": {
-                "$ref": "qal://resources.json#/definitions/Resource"
+                "$ref": "#/definitions/Resource"
             },
             "type": "array"
         }
