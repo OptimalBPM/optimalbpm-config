@@ -1,13 +1,53 @@
 {
   "description": "Optimal BPM",
   "web": {
-    "module": "process",
-    "path": "process",
-    "class": "CherryPyProcess"
+    "server": {
+      "module": "process",
+      "path": "process",
+      "class": "CherryPyProcess"
+    },
+    "client": {
+      "mountpoint": "/process",
+      "controllers": [
+        {
+          "name": "ProcessController",
+          "module": "process/controllers/process",
+          "dependencies": [
+            "$scope",
+            "$http",
+            "$q",
+            "$timeout"
+          ]
+        }
+      ],
+      "directives": [
+        {
+          "name": "process",
+          "module": "process/directives/process"
+        }
+      ],
+      "routes": [
+        {
+          "path": "/process",
+          "route": {
+            "templateUrl": "process/views/process.html"
+          }
+        }
+      ]
+      ,
+      "menu": {
+        "process": {
+          "caption": "PROCESS",
+          "weight": 0.5,
+          "url": "view",
+          "items": []
+        }
+      }
+    }
   },
   "namespaces": {
     "process": {
-      "meta" : {
+      "meta": {
         "description": "Process",
         "title": "Process"
       },
