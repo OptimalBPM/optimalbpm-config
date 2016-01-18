@@ -35,14 +35,15 @@
         }
       ]
       ,
-      "menu": {
-        "process": {
-          "caption": "PROCESS",
+      "menus": [
+        {
+          "caption": "DESIGN",
           "weight": 0.5,
-          "url": "view",
-          "items": []
+          "path": "/process",
+          "items": [],
+          "right": "Administer"
         }
-      }
+        ]
     }
   },
   "namespaces": {
