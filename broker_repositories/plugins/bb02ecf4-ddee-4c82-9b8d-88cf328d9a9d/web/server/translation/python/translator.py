@@ -6,7 +6,7 @@ import token
 from io import BytesIO
 import os
 
-from web.translation.python.verb import Verb, parse_documentation
+from .verb import Verb, parse_documentation
 
 __author__ = 'nibo'
 script_dir = os.path.dirname(__file__)
