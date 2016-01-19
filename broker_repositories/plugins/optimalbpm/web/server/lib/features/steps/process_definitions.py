@@ -2,7 +2,7 @@ import copy
 
 from behave import *
 from nose.tools.trivial import ok_
-from optimalbpm.schemas.constants import schema_id_node_process
+from of.schemas.constants import schema_id_node_process
 
 use_step_matcher("re")
 

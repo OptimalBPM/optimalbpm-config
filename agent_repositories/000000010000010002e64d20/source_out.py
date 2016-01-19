@@ -4,7 +4,7 @@ It is neither runnable or thought of as a example.
 """
 
 """Wait for e-mail message to arrive"""
-import optimalbpm.broker.lib.translation.features.fake_bpm_lib
+import of.broker.lib.translation.features.fake_bpm_lib
 
 """Is there is an attachment containing an excel file?"""
 if file.attachments[0].file_type == "excel":
@@ -35,7 +35,7 @@ else:
     print("This should always happen.")
 
 """If it"""
-from optimalbpm.broker.lib.translation.features.fake_bpm_lib import cantcallme
+from of.broker.lib.translation.features.fake_bpm_lib import cantcallme
 
 
 
@@ -46,7 +46,7 @@ from optimalbpm.broker.lib.translation.features.fake_bpm_lib import cantcallme
 """
 __author__ = 'nibo'
 
-optimalbpm.broker.lib.translation.features.fake_bpm_lib.a_global = 'nibo'
+of.broker.lib.translation.features.fake_bpm_lib.a_global = 'nibo'
 
 
 """
@@ -61,8 +61,8 @@ try:
     """
     dfsdfsdf
     """
-    optimalbpm.broker.lib.translation.features.fake_bpm_lib.obpm_say_this(optimalbpm.broker.lib.translation.features.fake_bpm_lib.obpm_say_this("Hello!", "Hey!"), poc.bpm_gui_poc.fake_bpm_lib.a_global)
-except optimalbpm.broker.lib.translation.features.fake_bpm_lib.TerminationException as e:
+    of.broker.lib.translation.features.fake_bpm_lib.obpm_say_this(of.broker.lib.translation.features.fake_bpm_lib.obpm_say_this("Hello!", "Hey!"), poc.bpm_gui_poc.fake_bpm_lib.a_global)
+except of.broker.lib.translation.features.fake_bpm_lib.TerminationException as e:
     print("Wow, we are being told to terminate..better be nice and exit or re-raise the error..raising : " + str(e))
     raise("error")
 

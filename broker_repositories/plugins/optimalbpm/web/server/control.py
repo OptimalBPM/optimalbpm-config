@@ -9,9 +9,9 @@ from mbe.cherrypy import aop_check_session
 from mbe.constants import object_id_right_admin_everything
 from mbe.groups import has_right
 from .lib.control import Control
-from optimalbpm.common.messaging.factory import start_process_message
+from of.common.messaging.factory import start_process_message
 
-from optimalbpm.broker.globals import states
+from of.broker.globals import states
 
 __author__ = 'Nicklas Borjesson'
 

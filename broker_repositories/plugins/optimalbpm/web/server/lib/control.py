@@ -6,11 +6,11 @@ import threading
 from bson.objectid import ObjectId
 
 from mbe.groups import user_in_any_of_groups
-from optimalbpm.common.internal import not_implemented
-from optimalbpm.common.logging import BPMLogging
-from optimalbpm.common.messaging.factory import agent_control
-from optimalbpm.schemas.constants import schema_id_node_process, zero_object_id
-from optimalbpm.broker.lib.repositories import Repositories
+from of.common.internal import not_implemented
+from of.common.logging import BPMLogging
+from of.common.messaging.factory import agent_control
+from of.schemas.constants import schema_id_node_process, zero_object_id
+from of.broker.lib.repositories import Repositories
 
 __author__ = 'Nicklas Borjesson'
 

@@ -14,13 +14,13 @@ sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
 from mbe.node import Node
 from administration import Administration
-from optimalbpm.broker.lib.messaging.handler import BrokerWebSocketHandler
-from optimalbpm.common.messaging.constants import GOING_AWAY
-from optimalbpm.common.queue.monitor import Monitor
-import optimalbpm.common.messaging.websocket
-from optimalbpm.common.testing.init_env import init_env
-from optimalbpm.broker.lib.messaging.websocket import MockupWebSocket
-from optimalbpm.schemas.constants import zero_object_id
+from of.broker.lib.messaging.handler import BrokerWebSocketHandler
+from of.common.messaging.constants import GOING_AWAY
+from of.common.queue.monitor import Monitor
+import of.common.messaging.websocket
+from of.common.testing.init_env import init_env
+from of.broker.lib.messaging.websocket import MockupWebSocket
+from of.schemas.constants import zero_object_id
 
 __author__ = 'nibo'
 
@@ -59,7 +59,7 @@ def init_low_level(context, feature):
                                         _schema_tools=context.db_access.schema_tools, _address="broker",
                                         _database_access=context.db_access), _logging_function=cherrypy.log.error)
 
-    optimalbpm.common.messaging.websocket.monitor = context.monitor
+    of.common.messaging.websocket.monitor = context.monitor
 
     # Register mockup WebSockets
     context.sender = MockupWebSocket(session_id="sender", context=context)

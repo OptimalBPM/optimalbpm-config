@@ -8,7 +8,7 @@ use_step_matcher("re")
 import os
 script_dir = os.path.dirname(__file__)
 
-from optimalbpm.broker.lib.translation.python.translator import ProcessTokens
+from of.broker.lib.translation.python.translator import ProcessTokens
 
 
 @given("a source file is tokenized")

@@ -5,9 +5,9 @@ import time
 from behave import *
 from bson.objectid import ObjectId
 from nose.tools.trivial import ok_
-from optimalbpm.common.messaging.factory import log_process_state_message, start_process_message
+from of.common.messaging.factory import log_process_state_message, start_process_message
 
-from optimalbpm.schemas.constants import schema_id_bpm_process_instance, schema_id_message_bpm_process_start, \
+from of.schemas.constants import schema_id_bpm_process_instance, schema_id_message_bpm_process_start, \
     schema_id_log_process_state, schema_id_message_bpm_process_result
 
 
