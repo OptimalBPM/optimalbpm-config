@@ -5,12 +5,10 @@ Created on Nov 27, 2014
 
 @author: Nicklas Borjesson
 """
-import json
+
 import sys
 import os
 sys.path.append(os.path.dirname(__file__))
-
-
 
 import cherrypy
 
@@ -18,7 +16,7 @@ from mbe.cherrypy import aop_check_session
 from mbe.constants import object_id_right_admin_everything
 from mbe.groups import has_right
 from .translation.python.translator import ProcessTokens, core_language
-
+import optimalbpm.schemas.constants
 
 # TODO: Consider what the documentation in the top of each module should look like (OB1-42)
 
@@ -86,6 +84,7 @@ class CherryPyProcess(object):
         """
         # TODO: Document the structure of the process parameters, perhaps create a schema?(OB1-144)
         has_right(object_id_right_admin_everything, kwargs["user"])
+        _tokens = ProcessTokens(_keywords=self.keywords, _definitions=self.definitions)
         _verbs = _tokens.json_to_verbs(cherrypy.request.json["verbs"])
         _filename = os.path.expanduser("~/optimalbpm/agent_repositories/000000010000010002e64d20/source_out.py")
         _tokens.encode_verbs(_verbs=_verbs, _header_raw=cherrypy.request.json["raw"],

@@ -2,13 +2,11 @@
 The constants module add constants for all the schemas defined in Optimal BPM
 """
 
-from of.schemas.constants import schema_categories, \
-    peer_type__schema_id
+import of.schemas.constants
 
 __author__ = 'Nicklas Borjesson'
 
 """
-Constants for _ids in the Optimal BPM database
 TODO: These are only constant for this instance of the database (perhaps XOR-them together with environment Id?)
 """
 
@@ -48,7 +46,7 @@ schema_id_bpm_process_instance = "59ff4df0-ecda-4631-98d9-31060c5c8642"
 schema_id_message_agent_control = "4487a7ca-2bc3-45b9-832f-41eaf05d0860"
 
 # Schema category dict. Used by handlers.
-schema_categories.update({
+of.schemas.constants.schema_categories.update({
     schema_id_bpm_process_parameters: "fragment",
     schema_id_process_instance: "fragment",
 
@@ -65,8 +63,9 @@ schema_categories.update({
 
     schema_id_bpm_process_instance: "process",
 
-
     schema_id_message_agent_control: "control"
 })
+# Results should be added
+of.schemas.constants.intercept_schema_ids = [schema_id_message_bpm_process_result]
 
-peer_type__schema_id.update({"agent": schema_id_node_agent})
+of.schemas.constants.peer_type__schema_id.update({"agent": schema_id_node_agent})

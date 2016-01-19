@@ -7,7 +7,7 @@ import datetime
 import os
 from optimalbpm.schemas.constants import schema_id_message_worker_process_command, schema_id_message_agent_control, \
     schema_id_message_bpm_process_command, schema_id_message_bpm_process_result, schema_id_log_process_message, \
-    schema_id_log_process_state, schema_id_bpm_process_instance, schema_id_message_bpm_process_start
+    schema_id_bpm_process_instance, schema_id_message_bpm_process_start
 
 if os.name != "nt":
     import pwd
