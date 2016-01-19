@@ -23,9 +23,9 @@ import "angular-ui/ui-ace";
 import "networknt/angular-schema-form-ui-ace";
 
 import "angular-schema-form-dynamic-select";
-import {NodeManager, NodeManagement} from "mbe-nodes/src/types/nodeManager";
-import {SchemaTreeController} from "mbe-nodes/src/controller/schemaTreeController";
-import {TreeNode, NodesScope, Dict, TreeScope} from "mbe-nodes/src/types/schemaTreeTypes"
+import {NodeManager, NodeManagement} from "types/nodeManager";
+import {SchemaTreeController} from "controller/schemaTreeController";
+import {TreeNode, NodesScope, Dict, TreeScope} from "types/schemaTreeTypes"
 
 import {Verb} from "../lib/tokens"
 import "../css/process.css!";
