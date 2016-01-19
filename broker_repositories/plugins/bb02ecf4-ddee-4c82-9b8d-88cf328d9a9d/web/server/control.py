@@ -10,7 +10,7 @@ from mbe.constants import object_id_right_admin_everything
 from mbe.groups import has_right
 from .lib.control import Control
 from optimalbpm.common.messaging.factory import start_process_message
-from optimalbpm.common.messaging.utils import get_environment_data
+
 from optimalbpm.broker.globals import states
 
 __author__ = 'Nicklas Borjesson'
@@ -99,13 +99,7 @@ class CherryPyControl(object):
 
         return self._administration.start_process(_start_process_message=_start_process_message, _user=kwargs["user"])
 
-    @cherrypy.expose
-    @cherrypy.tools.json_out(content_type='application/json')
-    @aop_check_session
-    def get_broker_environment(self, **kwargs):
-        has_right(object_id_right_admin_everything, kwargs["user"])
-        print("Request for broker information")
-        return get_environment_data()
+
 
     @cherrypy.expose
     @cherrypy.tools.json_out(content_type='application/json')
