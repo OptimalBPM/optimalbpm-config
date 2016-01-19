@@ -1698,7 +1698,7 @@
         ]
       ],
       "documentation": "\nTell computer far away to say \"Hello!\"\n\n:param data: Sending hello, as this is the common thing under these circumstances.\\\\nMaking this line multiline, see if it works.\n:param extra_param: Just sending this to complicate matters\n:return: Ain't returning nothing\n\n",
-      "type_title": "<img class='try_except_icons' width='15px' height='15px' src='/images/try_mid_mid.png'></img>",
+      "type_title": "<img class='try_except_icons' width='15px' height='15px' src='process/images/try_mid_mid.png'></img>",
       "type": "keyword",
       "row": 34,
       "allowedChildTypes": [

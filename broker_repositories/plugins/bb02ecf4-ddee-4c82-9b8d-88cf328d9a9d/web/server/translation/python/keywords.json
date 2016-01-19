@@ -140,7 +140,7 @@
   },
   "try": {
     "meta": {
-      "title": "<img class='try_except_icons' width='15px' height='15px' src='/images/try_mid_mid.png'></img>",
+      "title": "<img class='try_except_icons' width='15px' height='15px' src='process/images/try_mid_mid.png'></img>",
       "description": "Tries to execute its content and passes any errors to the following <b>except</b>-statement.<br /><div class='alert alert-danger'>Warning: If there is no following <b>except</b>-statement, the errors will be suppressed.</div>"
     },
     "expanded": true,

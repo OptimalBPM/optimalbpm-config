@@ -26,6 +26,7 @@ import "angular-schema-form-dynamic-select";
 import {NodeManager, NodeManagement} from "mbe-nodes/src/types/nodeManager";
 import {SchemaTreeController} from "mbe-nodes/src/controller/schemaTreeController";
 import {TreeNode, NodesScope, Dict, TreeScope} from "mbe-nodes/src/types/schemaTreeTypes"
+
 import {Verb} from "../lib/tokens"
 import "../css/process.css!";
 import "../scripts/utils";
@@ -350,27 +351,27 @@ export class ProcessController extends NodeManager implements NodeManagement {
         var new_definition:MenuNode = new MenuNode();
         var keywords = data["keywords"];
         var new_column = {"title": "Keywords", "children": []};
-        for (var key in keywords) {
+        for (var keyword in keywords) {
             new_column.children.push(createDefinition(
-                "new_keyword_"+ key, keywords[key], true , key,
-                ["keyword","call", "documentation", "assign"], "keyword", key))
+                "new_keyword_"+ keyword, keywords[keyword], true , keyword,
+                ["keyword","call", "documentation", "assign"], "keyword", keyword))
         }
         this.menuColumns.push(new_column);
 
-        for (var key in data["definitions"]) {
-            var curr_definition = data["definitions"][key];
+        for (var namespace in data["definitions"]) {
+            var curr_definition = data["definitions"][namespace];
             var new_column = {"title": curr_definition["meta"]["description"], "children": []};
 
-            for (var key in curr_definition["functions"]) {
+            for (var functionName in curr_definition["functions"]) {
 
-                if (curr_definition["meta"]["namespace"] != "") {
-                    var _identifier:string = curr_definition["meta"]["namespace"] + "." + key;
+                if (namespace != "") {
+                    var _identifier:string = namespace + "." + functionName;
                 } else {
-                    var _identifier:string = key;
+                    var _identifier:string = functionName;
                 }
 
-                new_column.children.push(createDefinition("new_" + curr_definition["meta"]["namespace"] + "_" + key
-                    , curr_definition["functions"][key], true, _identifier, [], "call", key));
+                new_column.children.push(createDefinition("new_" + namespace + "_" + functionName
+                    , curr_definition["functions"][functionName], true, _identifier, [], "call", functionName));
 
             }
             this.menuColumns.push(new_column)
