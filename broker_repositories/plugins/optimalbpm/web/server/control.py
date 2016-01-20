@@ -28,7 +28,7 @@ class CherryPyControl(object):
     states = None
 
     def __init__(self, _broker_object):
-        self._control = Control(_broker_object.database_access, _broker_object.node, _broker_object.monitor.queue, _broker_object.stop_broker,
+        self._control = Control(_broker_object.database_access, _broker_object.node._node, _broker_object.monitor.queue, _broker_object.stop_broker,
                                               _broker_object.address, _broker_object.process_id)
 
 
