@@ -9,15 +9,15 @@ from multiprocessing import Queue as MultiprocessingQueue, Queue
 from bson.objectid import ObjectId
 from mbe.schema import SchemaTools
 
-from of.agent.lib.control.handler import ControlHandler
-from of.agent.lib.messaging.handler import AgentWebSocketHandler
-from of.agent.lib.messaging.websocket import MockupAgentWebSocketClient
-import of.agent.lib.messaging.websocket
-from of.agent.lib.supervisor.handler import WorkerSupervisor, MockupWorkerSupervisor
-from of.agent.lib.worker.handler import WorkerHandlerMockup
+from optimalbpm.agent.lib.control.handler import ControlHandler
+from optimalbpm.agent.lib.messaging.handler import AgentWebSocketHandler
+from optimalbpm.agent.lib.messaging.websocket import MockupAgentWebSocketClient
+import optimalbpm.agent.lib.messaging.websocket
+from optimalbpm.agent.lib.supervisor.handler import WorkerSupervisor, MockupWorkerSupervisor
+from optimalbpm.agent.lib.worker.handler import WorkerHandlerMockup
 from of.common.queue.monitor import Monitor
 from of.common.testing.init_env import init_env
-from of.schemas.validation import optimal_bpm_uri_handler
+from of.schemas.validation import bpm_uri_handler, of_uri_handler
 
 script_dir = os.path.dirname(__file__)
 __author__ = 'nibo'
@@ -51,7 +51,7 @@ def before_feature(context, feature):
     print(
         "\n" + _log_prefix + "Testing feature " + feature.name + "\n=========================================================================\n")
     context.schema_tools = SchemaTools(_json_schema_folders=[os.path.abspath(os.path.join(script_dir, "..", "..", "..", "schemas"))],
-                _uri_handlers={"bpm": optimal_bpm_uri_handler})
+                _uri_handlers={"of": of_uri_handler, "bpm": bpm_uri_handler})
 
 
     # Fake a user (parts of data only)
@@ -111,7 +111,7 @@ def before_feature(context, feature):
                                 ),
         _logging_function=logprinter)
 
-    of.common.messaging.websocket.monitor = context.message_monitor
+    optimalbpm.common.messaging.websocket.monitor = context.message_monitor
     context.process_process_id = str(ObjectId())
 
     if feature.name == "Handle in- and outgoing messages":

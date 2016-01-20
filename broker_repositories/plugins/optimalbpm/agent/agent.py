@@ -34,7 +34,7 @@ from of.common.messaging.utils import register_at_broker
 from of.common.queue.monitor import Monitor
 
 from of.schemas.constants import zero_object_id
-from of.schemas.validation import of_uri_handler
+from of.schemas.validation import of_uri_handler, of_schema_folder
 import of.common.messaging.websocket
 
 
@@ -153,7 +153,8 @@ def start_agent():
 
     try:
         # Initiate a schema tools instance for validation other purposes.
-        _schema_tools = SchemaTools(_json_schema_folders=[os.path.abspath(os.path.join(script_dir, "..", "schemas"))],
+        _schema_tools = SchemaTools(_json_schema_folders=[os.path.abspath(os.path.join(script_dir, "..", "schemas")),
+                                                          of_schema_folder()],
                                     _uri_handlers={"of": of_uri_handler, "bpm": bpm_uri_handler})
     except Exception as e:
         print(_make_log_prefix() + "Fatal: An error occurred while loading schema tools:" + str(e))

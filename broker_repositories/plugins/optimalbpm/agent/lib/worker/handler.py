@@ -15,11 +15,13 @@ from types import FunctionType, MethodType, ModuleType
 
 from of.common.internal import not_implemented
 from of.common.messaging.factory import reply_with_error_message, log_process_state_message
-from optimalbpm.messaging.factory import store_bpm_process_instance_message
+from optimalbpm.messaging.factory import store_bpm_process_instance_message, log_progress_message, \
+    message_bpm_process_result, log_process_message
 from of.common.messaging.utils import message_is_none
 from of.common.queue.handler import Handler
 from of.schemas.constants import schema_id_message
-from optimalbpm.schemas.constants import schema_id_message_bpm_process_start
+from optimalbpm.schemas.constants import schema_id_message_bpm_process_start, schema_id_message_bpm_process_command, \
+    schema_id_message_worker_process_command
 
 __author__ = 'Nicklas Borjesson'
 
@@ -153,10 +155,10 @@ class WorkerHandler(Handler):
 
                 print(self.log_prefix + "Worker monitor stopped.")
                 self.send_queue.put([None, log_process_state_message(
-                    _changed_by=self.is_none(_message_data, "userId", "No user mentioned"),
+                    _changed_by=message_is_none(_message_data, "userId", "No user mentioned"),
                     _state="stopped",
                     _process_id=self.process_id,
-                    _reason=self.is_none(_message_data, "reason", "No reason mentioned"))])
+                    _reason=message_is_none(_message_data, "reason", "No reason mentioned"))])
                 print(self.log_prefix + "Reported stopping to process handler")
                 self.terminated = True
             else:

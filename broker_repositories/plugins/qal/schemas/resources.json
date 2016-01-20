@@ -35,6 +35,7 @@
         "resources"
     ],
     "title": "QAL Resources",
+    "schemaId": "9b3f3211-60c9-44c0-b5bd-cd565ae2ec11",
     "type": "object",
     "version": "0.5"
 }
