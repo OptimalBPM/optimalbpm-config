@@ -360,21 +360,23 @@ export class ProcessController extends NodeManager implements NodeManagement {
 
         for (var namespace in data["definitions"]) {
             var curr_definition = data["definitions"][namespace];
-            var new_column = {"title": curr_definition["meta"]["description"], "children": []};
+            if ("functions" in curr_definition) {
+                var new_column = {"title": curr_definition["meta"]["description"], "children": []};
 
-            for (var functionName in curr_definition["functions"]) {
+                for (var functionName in curr_definition["functions"]) {
 
-                if (namespace != "") {
-                    var _identifier:string = namespace + "." + functionName;
-                } else {
-                    var _identifier:string = functionName;
+                    if (namespace != "") {
+                        var _identifier:string = namespace + "." + functionName;
+                    } else {
+                        var _identifier:string = functionName;
+                    }
+
+                    new_column.children.push(createDefinition("new_" + namespace + "_" + functionName
+                        , curr_definition["functions"][functionName], true, _identifier, [], "call", functionName));
+
                 }
-
-                new_column.children.push(createDefinition("new_" + namespace + "_" + functionName
-                    , curr_definition["functions"][functionName], true, _identifier, [], "call", functionName));
-
+                this.menuColumns.push(new_column)
             }
-            this.menuColumns.push(new_column)
         }
 
     };

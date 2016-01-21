@@ -63,7 +63,7 @@ class CherryPyProcess(object):
         # TODO: load specific process..._process_id = cherrypy.request.remote.processid(OB1-145)
         _tokens = ProcessTokens(_keywords=self.keywords, _definitions=self.broker.definitions)
         _verbs = _tokens.parse_file(
-            os.path.expanduser("~/optimalbpm/agent_repositories/000000010000010002e64d20/source.py"))
+            os.path.expanduser("~/optimalframework/agent_repositories/000000010000010002e64d20/source.py"))
         _result = dict()
         _result["verbs"] = _tokens.verbs_to_json(_verbs)
         _result["raw"] = _tokens.raw
@@ -84,9 +84,9 @@ class CherryPyProcess(object):
         """
         # TODO: Document the structure of the process parameters, perhaps create a schema?(OB1-144)
         has_right(object_id_right_admin_everything, kwargs["user"])
-        _tokens = ProcessTokens(_keywords=self.keywords, _definitions=self.definitions)
+        _tokens = ProcessTokens(_keywords=self.keywords, _definitions=self.broker.definitions)
         _verbs = _tokens.json_to_verbs(cherrypy.request.json["verbs"])
-        _filename = os.path.expanduser("~/optimalbpm/agent_repositories/000000010000010002e64d20/source_out.py")
+        _filename = os.path.expanduser("~/optimalframework/agent_repositories/000000010000010002e64d20/source_out.py")
         _tokens.encode_verbs(_verbs=_verbs, _header_raw=cherrypy.request.json["raw"],
                              _filename=_filename)
         print("save_process: Wrote to " + _filename)
