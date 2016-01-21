@@ -5,11 +5,11 @@ import time
 from behave import *
 from bson.objectid import ObjectId
 from nose.tools.trivial import ok_
-from of.common.messaging.factory import log_process_state_message, start_process_message
-
-from of.schemas.constants import schema_id_bpm_process_instance, schema_id_message_bpm_process_start, \
-    schema_id_log_process_state, schema_id_message_bpm_process_result
-
+from of.common.messaging.factory import log_process_state_message
+from of.schemas.constants import schema_id_log_process_state
+from optimalbpm.messaging.factory import start_process_message
+from optimalbpm.schemas.constants import schema_id_message_bpm_process_start, schema_id_bpm_process_instance, \
+    schema_id_message_bpm_process_result
 
 use_step_matcher("re")
 

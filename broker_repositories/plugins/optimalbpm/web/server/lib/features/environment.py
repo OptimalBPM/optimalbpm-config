@@ -13,7 +13,7 @@ import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
 from mbe.node import Node
-from administration import Administration
+from optimalbpm.web.server.control import Control
 from of.broker.lib.messaging.handler import BrokerWebSocketHandler
 from of.common.messaging.constants import GOING_AWAY
 from of.common.queue.monitor import Monitor
@@ -69,7 +69,7 @@ def init_low_level(context, feature):
         pass
     if feature.name in ["Process Management", "Process definition management API"]:
         context.node = Node(_database_access=context.db_access, _rights=[object_id_right_admin_nodes])
-        context.administration = Administration(context.db_access, context.node,
+        context.Control = Control(context.db_access, context.node,
                                                 _send_queue=context.monitor.queue,
                                                 _stop_broker=None,
                                                 _address="",
