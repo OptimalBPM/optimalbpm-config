@@ -18,7 +18,7 @@ from of.broker.lib.messaging.handler import BrokerWebSocketHandler
 from of.common.messaging.constants import GOING_AWAY
 from of.common.queue.monitor import Monitor
 import of.common.messaging.websocket
-from of.common.testing.init_env import init_env
+from optimalbpm.testing.init_env import init_bpm_env
 from of.broker.lib.messaging.websocket import MockupWebSocket
 from of.schemas.constants import zero_object_id
 
@@ -33,7 +33,7 @@ object_id_right_admin_nodes = "000000010000010001e64d01"
 
 
 def before_all(context):
-    init_env(context)
+    init_bpm_env(context)
 
 
 def init_low_level(context, feature):
@@ -55,7 +55,7 @@ def init_low_level(context, feature):
     }
 
     context.monitor = Monitor(
-        _handler=BrokerWebSocketHandler(_process_id=context.agent_process_id, _peers=_peers,
+        _handler=BrokerWebSocketHandler(_process_id=context.peer_process_id, _peers=_peers,
                                         _schema_tools=context.db_access.schema_tools, _address="broker",
                                         _database_access=context.db_access), _logging_function=cherrypy.log.error)
 

@@ -73,7 +73,7 @@ def step_impl(context):
     context.sender.on_message = on_source_process_control_message
     # The definition below was saved by having the first step of the process definitions tests as first step.
     context.original_definition = context.node.find({"name": "Test_Process_definition"}, context.user)[0]
-    context.process_id = context.administration.start_process(
+    context.process_id = context.control.start_process(
         start_process_message(_user_id = context.user["_id"],
                               _process_definition_id = context.original_definition["_id"],
                               _destination = "destination_peer",
