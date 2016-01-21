@@ -2,10 +2,11 @@
 This module holds the AgentWebSocketHandler class
 """
 import logging
-from of.common.messaging.constants import AGENT_SHUTTING_DOWN
+
 
 from of.common.messaging.factory import reply_with_error_message
 from of.common.messaging.handler import WebSocketHandler
+from optimalbpm.messaging.constants import AGENT_SHUTTING_DOWN
 from optimalbpm.schemas.constants import schema_id_message_worker_process_command
 
 __author__ = 'Nicklas Börjesson'

@@ -2,7 +2,7 @@
 This module holds the ControlHandler class.
 """
 import threading
-from of.common.messaging.constants import AGENT_SHUTTING_DOWN
+
 
 from of.common.queue.handler import Handler
 from optimalbpm.schemas.constants import schema_id_message_agent_control

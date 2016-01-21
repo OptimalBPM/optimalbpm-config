@@ -6,10 +6,11 @@ from behave import *
 
 from nose.tools.trivial import ok_
 
-from of.common.messaging.factory import bpm_process_control
-from of.schemas.constants import schema_id_message_bpm_process_start, schema_id_process_instance, \
-    schema_id_bpm_process_instance, schema_id_log_process_state, schema_id_log_process_message, \
-    schema_id_message_bpm_process_result, schema_id_log_progression, schema_id_system_process
+
+from of.schemas.constants import schema_id_log_process_state, schema_id_log_progression, schema_id_system_process
+from optimalbpm.messaging.factory import bpm_process_control
+from optimalbpm.schemas.constants import schema_id_bpm_process_instance, schema_id_log_process_message, \
+    schema_id_message_bpm_process_result, schema_id_message_bpm_process_start
 
 use_step_matcher("re")
 

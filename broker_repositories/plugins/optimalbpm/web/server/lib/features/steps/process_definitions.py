@@ -33,7 +33,7 @@ def step_impl(context):
         ]
     }
 
-    context.original_definition["_id"] = context.administration.save_process_definition(
+    context.original_definition["_id"] = context.control.save_process_definition(
         copy.deepcopy(context.original_definition),
         context.user)
 
@@ -43,7 +43,7 @@ def step_impl(context):
     """
     :type context behave.runner.Context
     """
-    _result = context.administration.load_process_definition(context.original_definition["_id"], context.user)
+    _result = context.control.load_process_definition(context.original_definition["_id"], context.user)
     if _result:
         ok_(context.original_definition == _result, "Failed to load process definition, differing result.")
     else:
@@ -59,7 +59,7 @@ def step_impl(context):
     context.original_definition = context.node.find({"name" : "Test_Process_definition"}, context.user)[0]
     context.original_definition["name"] = "Test_Process_definition_CHANGED"
 
-    context.administration.save_process_definition(copy.deepcopy(context.original_definition), context.user)
+    context.control.save_process_definition(copy.deepcopy(context.original_definition), context.user)
 
 @step("a matching repository should be created")
 def step_impl(context):
@@ -74,7 +74,7 @@ def step_impl(context):
     """
     :type context behave.runner.Context
     """
-    _result = context.administration.load_process_definition(context.original_definition["_id"], context.user)
+    _result = context.control.load_process_definition(context.original_definition["_id"], context.user)
     if len(_result) > 0:
         ok_(False, "Failed to load process definition, differing result.")
     else:
@@ -88,7 +88,7 @@ def step_impl(context):
     :type context behave.runner.Context
     """
     context.original_definition = context.node.find({"name" : "Test_Process_definition_CHANGED"}, context.user)[0]
-    _result = context.administration.remove_process_definition(context.original_definition["_id"], context.user)
+    _result = context.control.remove_process_definition(context.original_definition["_id"], context.user)
     ok_(True)
 
 @step("the repository should be deleted")

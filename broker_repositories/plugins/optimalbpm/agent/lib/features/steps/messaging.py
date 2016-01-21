@@ -8,8 +8,8 @@ from bson.objectid import ObjectId
 from nose.tools.trivial import ok_
 from of.common.messaging.factory import reply_with_error_message
 
-from of.schemas.constants import schema_id_message, schema_id_bpm_process_instance, \
-    schema_id_log_process_state, schema_id_message_bpm_process_start
+from of.schemas.constants import schema_id_message
+from optimalbpm.schemas.constants import schema_id_message_bpm_process_start
 
 use_step_matcher("re")
 
@@ -57,6 +57,7 @@ def step_impl(context):
         "sourceProcessId": context.process_process_id,
         "destinationProcessId": destination_process_id,
         "data": "The_Data_åäö",
+        "source": "agent_peer",
         "schemaId": schema_id_message
     }
     context.message_monitor.queue.put([None, context.message])

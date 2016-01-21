@@ -6,7 +6,7 @@ Feature: Optimal BPM startup and shutdown scenarios
   Scenario: Starting broker and an agent and terminate and restart the broker
     Given the broker is started
     And we wait 1 seconds
-    And it is it possible to register at the broker
+    And it is it possible to register an agent at the broker
     And the agent is started
     And we wait 1 seconds
     And the agent process is registered

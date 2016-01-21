@@ -12,7 +12,7 @@ script_dir = os.path.dirname(__file__)
 
 def init_bpm_env(_context=None):
 
-    init_env(_data_files=[os.path.join(script_dir, "data_struct.json"),os.path.join(script_dir, "data_test.json")],
+    init_env(_context, _data_files=[os.path.join(script_dir, "data_struct.json"),os.path.join(script_dir, "data_test.json")],
              _json_schema_folders=[os.path.abspath(os.path.join(script_dir, "..", "schemas"))],
              _uri_handlers={"bpm": bpm_uri_handler})
 

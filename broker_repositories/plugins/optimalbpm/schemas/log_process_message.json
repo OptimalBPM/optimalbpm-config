@@ -23,7 +23,7 @@
       "propertyId": "efc52798-4639-495b-b462-90099cf18ff5"
     },
     "createdWhen": {
-      "description": "The time the message happende",
+      "description": "The time the reported happened",
       "type": "string",
       "format": "date-time",
       "propertyId": "3236ff1d-3d30-43c6-a06d-db29242afca8"

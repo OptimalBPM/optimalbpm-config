@@ -16,8 +16,9 @@ import optimalbpm.agent.lib.messaging.websocket
 from optimalbpm.agent.lib.supervisor.handler import WorkerSupervisor, MockupWorkerSupervisor
 from optimalbpm.agent.lib.worker.handler import WorkerHandlerMockup
 from of.common.queue.monitor import Monitor
-from of.common.testing.init_env import init_env
-from of.schemas.validation import bpm_uri_handler, of_uri_handler
+from of.schemas.validation import of_uri_handler, of_schema_folder
+from optimalbpm.schemas.validation import bpm_uri_handler
+import of.common.messaging.websocket
 
 script_dir = os.path.dirname(__file__)
 __author__ = 'nibo'
@@ -50,7 +51,7 @@ def before_feature(context, feature):
     """
     print(
         "\n" + _log_prefix + "Testing feature " + feature.name + "\n=========================================================================\n")
-    context.schema_tools = SchemaTools(_json_schema_folders=[os.path.abspath(os.path.join(script_dir, "..", "..", "..", "schemas"))],
+    context.schema_tools = SchemaTools(_json_schema_folders=[os.path.abspath(os.path.join(script_dir, "..", "..", "..", "schemas")), of_schema_folder()],
                 _uri_handlers={"of": of_uri_handler, "bpm": bpm_uri_handler})
 
 
@@ -111,7 +112,7 @@ def before_feature(context, feature):
                                 ),
         _logging_function=logprinter)
 
-    optimalbpm.common.messaging.websocket.monitor = context.message_monitor
+    of.common.messaging.websocket.monitor = context.message_monitor
     context.process_process_id = str(ObjectId())
 
     if feature.name == "Handle in- and outgoing messages":

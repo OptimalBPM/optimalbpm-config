@@ -69,7 +69,7 @@ def init_low_level(context, feature):
         pass
     if feature.name in ["Process Management", "Process definition management API"]:
         context.node = Node(_database_access=context.db_access, _rights=[object_id_right_admin_nodes])
-        context.Control = Control(context.db_access, context.node,
+        context.control = Control(context.db_access, context.node,
                                                 _send_queue=context.monitor.queue,
                                                 _stop_broker=None,
                                                 _address="",

@@ -76,23 +76,3 @@ def step_impl(context):
 
 
 
-@step("it is it possible to register at the broker")
-def step_impl(context):
-    """
-    :type context behave.runner.Context
-    """
-
-    try:
-        context.session = register_at_broker(_address="test", _type="agent", _server="https://127.0.0.1:8080",
-                                             _username="tester", _password="test")
-
-        if context.session["session_id"]:
-            print("Successfully registered at broker, got sessionid: " +str(context.session["session_id"]))
-            ok_(True)
-        else:
-            ok_(False, "No session Id returned.")
-    except ConnectionError as e:
-        ok_(False, "'Connection Error registering:" + str(e))
-    except Exception as e:
-        ok_(False, "Error registering:" + str(e))
-
