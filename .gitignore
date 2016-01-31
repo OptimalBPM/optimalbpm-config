@@ -1,5 +1,3 @@
 plugins
-agent_repositories
-broker_repositories
 *__pycache__*
 *.pyc

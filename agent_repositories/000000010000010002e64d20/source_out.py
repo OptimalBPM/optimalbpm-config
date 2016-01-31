@@ -5,21 +5,13 @@ It is neither runnable or thought of as a example.
 
 """Wait for e-mail message to arrive"""
 import of.broker.lib.translation.features.fake_bpm_lib
-
 """Is there is an attachment containing an excel file?"""
-if file.attachments[0].file_type == "excel":
+if 1 == 0:
     """Parse the content"""
-    xml_parse_result = parse_xml_file(file, parser_config)
+    output1, output2 = "There is actually data coming out of it.", "sdf"
     """Attempt to push into database"""
-    successfully_pushed_data = import_table.insert(xml_parse_result)
-
-    xml_parse_result = parse_xml_file(
-    """The content was successfully inserted into the database
-And indented like this
-and this
-and this
-     and thus
-this happened"""
+    output = str("This should never happen.")
+    """The content was successfully inserted into the database"""
     if result == true:
         """Tell Eva about it"""
         send_message("An excel document from " + sender + "has been added to the database", Eva)
