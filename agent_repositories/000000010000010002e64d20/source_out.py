@@ -3,6 +3,9 @@ This process file is a part of the Optimal BPM Python parsing testing,
 It is neither runnable or thought of as a example.
 """
 
+"""Get data from a data source"""
+dataset = qal.merge_datasets(getData("56ae4c7de36634746d693fe4"))
+
 """Wait for e-mail message to arrive"""
 import of.broker.lib.translation.features.fake_bpm_lib
 """Is there is an attachment containing an excel file?"""
