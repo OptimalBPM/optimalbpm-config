@@ -4,7 +4,7 @@ It is neither runnable or thought of as a example.
 """
 
 """Get data from a data source"""
-dataset = qal.merge_datasets(getData("000000000000000000001234"))
+dataset = qal.merge_datasets(get_data("000000000000000000001234"))
 
 """Wait for e-mail message to arrive"""
 import of.broker.lib.translation.features.fake_bpm_lib
