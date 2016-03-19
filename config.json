@@ -5,6 +5,10 @@
     "pluginFolder": "~/optimalframework/plugins",
     "database": {
       "databaseName": "test_broker"
+    },
+    "logging": {
+      "severityLevel": "debug",
+      "databaseLevel": "debug"
     }
   },
   "agent": {
@@ -14,6 +18,10 @@
     "brokerUrl": "127.0.0.1:8080",
     "username": "tester",
     "password": "test",
-    "connectionRetries": "2"
+    "connectionRetries": "2",
+    "logging": {
+      "severityLevel": "debug",
+      "databaseLevel": "debug"
+    }
   }
 }
