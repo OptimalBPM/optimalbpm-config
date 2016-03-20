@@ -16,6 +16,7 @@
     "repositoryFolder": "~/optimalframework/agent_repositories",
     "pluginFolder": "~/optimalframework/plugins",
     "brokerUrl": "127.0.0.1:8080",
+    "verifySSL": false,
     "username": "tester",
     "password": "test",
     "connectionRetries": "2",
