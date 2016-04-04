@@ -8,7 +8,7 @@
     },
     "logging": {
       "severityLevel": "debug",
-      "databaseLevel": "warning"
+      "databaseLevel": "information"
     }
   },
   "agent": {
@@ -21,7 +21,7 @@
     "password": "test",
     "connectionRetries": "2",
     "logging": {
-      "severityLevel": "debug",
+      "severityLevel": "information",
       "brokerLevel": "information"
     }
   }
