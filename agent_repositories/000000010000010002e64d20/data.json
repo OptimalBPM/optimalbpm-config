@@ -1,1 +1,0 @@
-{"56b2a50b0316c5a4423e3c63": {"delete": false, "update": false, "mappings": [{"is_key": false}], "insert": false, "resources": [{}]}, "56ae4c7de36634746d693fe4": {"delete": true, "update": false, "mappings": [{"is_key": false}], "resources": [{"base_path": "sdfsdfsdsdf"}, {"base_path": "sdfsdfsdf"}], "insert": false, "post_execute_sql": "TEST"}}

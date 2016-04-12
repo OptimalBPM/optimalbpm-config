@@ -1,1 +1,0 @@
-{"1": {"identifier": "file", "documentation": "\nThis process file is a part of the Optimal BPM Python parsing testing,\nIt is neither runnable or thought of as a example.\n"}, "9": {"identifier": "qal.query", "documentation": "Try and query the database"}, "7": {"identifier": "qal.merge_datasets", "documentation": "Get data from a data source"}}
