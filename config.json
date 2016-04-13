@@ -4,7 +4,7 @@
     "repositoryFolder": "~/optimalframework/broker_repositories",
     "pluginFolder": "~/optimalframework/plugins",
     "database": {
-      "databaseName": "test_broker"
+      "databaseName": "test_bpm"
     },
     "logging": {
       "severityLevel": "debug",
