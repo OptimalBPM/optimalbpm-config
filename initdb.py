@@ -1,4 +1,4 @@
 #!/usr/bin/env python3
-from of.broker.testing.init_env import init_env
+from plugins.optimalbpm.testing.init_env import init_bpm_env
 
-init_env()
+init_bpm_env()
