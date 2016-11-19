@@ -2,7 +2,7 @@
   "broker": {
     "address": "broker01",
     "repositoryFolder": "~/optimalframework/agent_repositories",
-    "pluginFolder": "~/optimalframework/plugins",
+    "pluginsFolder": "~/optimalframework/plugins",
     "database": {
       "databaseName": "test_bpm"
     },
