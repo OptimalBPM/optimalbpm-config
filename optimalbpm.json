@@ -1,0 +1,19 @@
+{
+  "installLocation": "~/optimalbpm/",
+  "installRepositoryUrl": "https://github.com/OptimalBPM/optimalbpm-config.git",
+  "pluginsFolder": "plugins",
+  "plugins": {
+    "admin": {
+      "url": "https://github.com/OptimalBPM/of-admin.git",
+      "branch": "main"
+    },
+    "optimalbpm": {
+      "url": "https://github.com/OptimalBPM/optimalbpm.git",
+      "branch": "main"
+    },
+    "qal": {
+      "url": "https://github.com/OptimalBPM/qal.git",
+      "branch": "main"
+    }
+  }
+}
