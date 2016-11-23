@@ -13,8 +13,8 @@
   },
   "agent": {
     "address": "agent01",
-    "repositoryFolder": "~/optimalframework/agent_repositories",
-    "pluginFolder": "~/optimalframework/plugins",
+    "repositoryFolder": "agent_repositories",
+    "pluginFolder": "plugins",
     "brokerUrl": "127.0.0.1:8080",
     "verifySSL": false,
     "username": "tester",
