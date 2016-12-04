@@ -5,7 +5,7 @@
 """
 
 import os
-script_dir = os.path.dirname(__file__)
+script_dir = os.path.dirname(os.path.abspath(__file__))
 
 from plugins.optimalbpm.agent.agent import start_agent
 
