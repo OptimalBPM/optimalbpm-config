@@ -17,8 +17,8 @@
     "pluginFolder": "plugins",
     "brokerUrl": "127.0.0.1:8080",
     "verifySSL": false,
-    "username": "agent01",
-    "password": "86b52717f4892b9669ebc6ea3ab381f8",
+    "username": "tester",
+    "password": "test",
     "connectionRetries": "2",
     "logging": {
       "severityLevel": "information",
